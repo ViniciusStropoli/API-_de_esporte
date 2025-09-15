@@ -4,6 +4,7 @@ import com.aula.projeto02.sistema.Models.Time;
 import com.aula.projeto02.sistema.Repositories.TimeRepositorie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,11 @@ public class TimeController {
 
     @GetMapping
     public List<Time> getAll() {
-        return timeRepositorie.findAll( );
+        return timeRepositorie.findAll();
+    }
+
+    @GetMapping("/cidade/{cidade}")
+    public List<Time> findByCidade(@PathVariable String cidade) {
+        return timeRepositorie.findByCidade(cidade);
     }
 }

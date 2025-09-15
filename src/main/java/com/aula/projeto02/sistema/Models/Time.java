@@ -1,5 +1,6 @@
 package com.aula.projeto02.sistema.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +20,8 @@ public class Time {
     private String nome;
 
     private String cidade;
+
+    @JsonIgnore
 
     @OneToMany(mappedBy = "time", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Jogador> jogadores;
