@@ -23,7 +23,10 @@ public class Time {
 
     @JsonIgnore
 
+    @OneToOne
+    @JoinColumn(name = "tecnico_id")
+    private Tecnico tecnico;
+
     @OneToMany(mappedBy = "time", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Jogador> jogadores;
-
 }

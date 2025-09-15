@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface TecnicoRepositorie extends JpaRepository<Tecnico, Long> {
-    List<Tecnico> findByTime_Id(Long time_id);
 
 }
